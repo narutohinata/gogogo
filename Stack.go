@@ -42,11 +42,9 @@ func (stack *Stack) Push(data int)  {
 }
 
 func (stack *Stack) Pop() int {
+	value := stack.elements[stack.size-1]
+	stack.elements[stack.size-1] = 0
 	stack.size--
-	value := stack.elements[0]
-	for i := uint(0); i < stack.size ; i++  {
-		stack.elements[i] = stack.elements[i+1]
-	}
 	return value
 }
 

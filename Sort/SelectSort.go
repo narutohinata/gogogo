@@ -7,9 +7,7 @@ func SelectSort(data []int)  {
 		min := data[i]
 		for j := i+1 ; j < len(data); j++ {
 			if data[j] < min {
-				temp := data[j]
-				data[j] = min
-				min = temp
+				data[j], min = min, data[j]
 			}
 		}
 		data[i] = min
